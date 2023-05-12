@@ -21,17 +21,10 @@ namespace EventPublisherConsole
 
             for (int i = 1; i <= 10; i++)
             {
-                var test = new Message() { CaseId = i, ProductId = "Product" + i };
-
-                // send using event hub producer client
-                var testEvent = new Event()
-                {
-                    Source = "Testing",
-                    Data = test
-                };
+                var testMessage = new Message() { CaseId = i, ProductId = "Product" + i };
 
                 // Create a batch of events 
-                var eventData = new EventData(Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(testEvent)));
+                var eventData = new EventData(Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(testMessage)));
                 try
                 {
                     await _eventHubProducerClient.SendAsync(new List<EventData> { eventData }, CancellationToken.None);

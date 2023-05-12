@@ -18,9 +18,9 @@ namespace EventCosumerDapr.Controllers
 
         [Topic("source-hub-component", "source-hub", enableRawPayload: false)]
         [HttpPost("/onboarding-status")]
-        public async Task<ActionResult> PostStatus(Event test)
+        public async Task<ActionResult> PostStatus(Message test)
         {
-            _logger.LogInformation("GV Onboarding status: " + JsonSerializer.Serialize(test));
+            _logger.LogInformation("Received: " + JsonSerializer.Serialize(test));
             await Task.Run(DoSomething);
             return Ok(JsonSerializer.Serialize(test));
         }
