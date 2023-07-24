@@ -16,7 +16,6 @@ jobs:
     runs-on: windows-latest
 
     steps:
-
       # Checkout your code repository to scan
     - uses: actions/checkout@v3
 
