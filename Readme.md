@@ -1,6 +1,6 @@
 # EventHubPubSubDapr
 
-This is a sample project to demonstrate how to use Dapr to subscribe to Azure Event Hub messages, where the messages are not conformant to the CloudEvents schema.
+This is a sample project to demonstrate how to use Dapr to subscribe to Azure Event Hub messages, where the messages are *not* conformant to the CloudEvents schema.
 
 ## Steps
 
