@@ -1,8 +1,11 @@
 name: MSDO windows-latest
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    - cron: '41 16 * * 3'
 
 jobs:
   sample:
